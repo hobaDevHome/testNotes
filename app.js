@@ -5,6 +5,7 @@ const notesButton = document.getElementById("next");
 const freeBuggon = document.getElementById("show-res");
 const startButton = document.getElementById("start");
 const stopButton = document.getElementById("stop");
+const input = document.getElementById("fname");
 
 let chosenMode = "";
 let index = -1;
@@ -28,7 +29,6 @@ const notes = [
 ];
 const free = ["FA1", "LA", "RI", "SOL", "DO", "FA2"];
 let myTimeout = null;
-const interval = 1000;
 
 // playing
 freeBuggon.addEventListener("click", function () {
@@ -43,6 +43,7 @@ notesButton.addEventListener("click", function () {
 
 startButton.addEventListener("click", function () {
   console.log("start button clicked");
+  const interval = document.getElementById("interval").value * 1000;
   myTimeout = setInterval(strtPlaying, interval);
 });
 stopButton.addEventListener("click", function () {
